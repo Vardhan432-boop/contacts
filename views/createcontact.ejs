@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#ffbbf4]">
+    <h1 class="text-blue-300 text-2xl">Create A Conatct</h1>
+    <%if(typeof errors !='undefined'){%>
+        <div class="bg-red-600 text-red-400">
+            <ul class="list-disc">
+                <% errors.forEach(function(error){%>
+                 <li><%=error.msg%></li>
+               <% })%>
+            </ul>
+        </div>
+        <%}%>
+    <div class="mt-4 p-4 ">
+    <form method="post" action="/createcontact">
+        <input type="text" class="outline-none bg-[#555555]  border-2 rounded-lg"  placeholder="name" name="name">
+        <input type="text" class="outline-none bg-[#555555] w-80 border-2 rounded-lg"  placeholder="mobilenumber" name="mobilenumber">
+        <input type="submit" class="bg-[#b2d8b2] mt-4 p-2 rounded-lg" value="Create A Contact">
+    </form>
+    </div>
+</body>
+</html>

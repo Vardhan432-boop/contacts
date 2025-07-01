@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#ffbbf4]">
+    <h1 class="text-blue-300 text-2xl">Create A User</h1>
+    <%if(typeof errors !='undefined') {%>
+        <div class="bg-orange-700 text-blue-400">
+            <ul class="list-disc">
+            <% errors.forEach(function(error){%>
+                <li><%=error.msg%></li>
+            <%})%>
+            </ul>
+        </div>
+   <% } %>
+    <div class="mt-4 p-4 ">
+    <form method="post" action="/create">
+        <input type="text" class="outline-none bg-[#555555]  border-2 rounded-lg"  placeholder="username" name="username">
+        <input type="text" class="outline-none bg-[#555555] w-80 border-2 rounded-lg"  placeholder="email" name="email">
+        <input type="text" class="outline-none bg-[#555555] border-2 rounded-lg"  placeholder="password" name="password">
+        <input type="submit" class="bg-[#b2d8b2] mt-4 p-2 rounded-lg" value="Create A User">
+    </form>
+    <a href="/login">Have an account,Login</a>
+    </div>
+</body>
+</html>
